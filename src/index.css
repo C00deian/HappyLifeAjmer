@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    color: #1d213b;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-poppins font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 inline-block;
+  }
+
+  .btn-orange {
+    @apply bg-orange text-navy font-poppins font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 inline-block;
+  }
+
+  .btn-dark {
+    @apply bg-navy text-white font-poppins font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 inline-block;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-poppins font-bold text-navy mb-4;
+  }
+
+  .section-subheading {
+    @apply text-muted font-roboto text-base leading-relaxed;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-inner {
+  display: inline-block;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00a3e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d213b;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: #00a3e1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  width: 25px !important;
+  border-radius: 5px !important;
+  transition: width 0.3s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
+  background: rgba(0, 163, 225, 0.8);
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+/* Floating button pulse animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #7b36ce;
+  animation: pulse-ring 2s ease-out infinite;
+}
