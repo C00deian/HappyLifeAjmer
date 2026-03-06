@@ -4,7 +4,6 @@ import Header from "./components/layout/Header";
 import FloatingContactButton from "./components/layout/FloatingContactButton";
 import HomePage from "./pages/HomePage";
 import ConsultancyPage from "./pages/ConsultancyPage";
-import Footer from "./components/layout/Contact";
 function App() {
   return (
     <div className="min-h-screen flex flex-col">

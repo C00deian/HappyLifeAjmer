@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
+import { FaMapMarkerAlt} from "react-icons/fa";
 
 const locations = [
   {
